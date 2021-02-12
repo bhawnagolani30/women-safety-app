@@ -17,8 +17,8 @@ The main idea of this application is to provide help immediately to any women wh
 - Operating System for app to work: **Android**
 - Programming Languages Used: **Java**
 - **XML** is used for front end
-- Database used id **SQLite**
-- This project in made using **Android Studio IDE**
+- Database used is **SQLite**
+- This project is made using **Android Studio IDE**
 
 ## Implementation Details
 #### Currently Implemented:
