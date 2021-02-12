@@ -2,7 +2,7 @@
 Safety of women has become a major issue as the number of crimes over women and girls keep increasing day-by-day. This application is designed to provide safety to women.
 
 ## Main idea
-The main idea of this application is to provide help immediately to any women who is danger. This is basically an Android Based application. The proposal is to have following features the app:
+The main idea of this application is to provide help immediately to any women who is in danger. This is basically an Android Based application. The proposal is to have following features the app:
 - **Send SOS messages**: The app will send a SOS message stating that the person is in need of help with their current _location details_ to their saved contacts on clicking a button.
 - **Make SOS Calls**: Make calls to the saved numbers when in need of help just on a click of a button so that help can be provided immediately.
 - **Suggest Safe Path**: Suggest safe paths to women from source to destination by choosing the streets which are crowded more as compared to other streets. Travelling by streets which are empty is more dangerous.
