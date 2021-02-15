@@ -24,9 +24,9 @@ The main idea of this application is to provide help immediately to any women wh
 #### Currently Implemented:
 - The app asks the user to Add contacts to whom they would like to inform in need of help. There are features to Add, Delete and View Saved contacts.
 - The entered contacts are saved in a SQLite Database.
-- On clicking the Emergency button in the app, an alert sound starts playing, a text message containing the victims current location is sent to the numbers provided by the user and also a call is made to those numbers.
+- On clicking the Emergency button in the app, an alert sound starts playing and a text message containing the victims current location is sent to the numbers provided by the user.
 - The current location is accessed using the latitude and longitude of the location.
-- The user is also informed that the help message is sent to the numbers.
+- The user can also make calls to police, ambulance and women helpline numbers whenever in danger.
 
 #### Future implementation:
 - Further, a feature to find the safe paths to destination will be developed. This can be made by integrating Google Maps in the app. It will suggest the paths which are short and more crowded. This can be done by implementing map as a graph, locations as nodes, streets as edges and crowd as weight of edges. 
