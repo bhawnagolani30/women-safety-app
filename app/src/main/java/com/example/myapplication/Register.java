@@ -32,7 +32,7 @@ public class Register extends AppCompatActivity {
         b1 = findViewById(R.id.add);
         b2 = findViewById(R.id.delete);
         b3 = findViewById(R.id.view);
-
+        listView = findViewById(R.id.list);
         myDB = new DatabaseHandler(this);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +64,7 @@ public class Register extends AppCompatActivity {
 
     private void loadData() {
         ArrayList<String> theList= new ArrayList<>();
+//        theList.add("hello");
         Cursor data=myDB.getListContents();
         if(data.getCount()==0)
         {
@@ -71,11 +72,12 @@ public class Register extends AppCompatActivity {
         }
         else
         {
+
             while(data.moveToNext()){
                 theList.add(data.getString(1));
-                ListAdapter listAdapter= new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,theList);
-                listView.setAdapter(listAdapter);
             }
+            ListAdapter listAdapter= new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,theList);
+            listView.setAdapter(listAdapter);
         }
     }
 

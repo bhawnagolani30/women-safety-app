@@ -48,7 +48,7 @@ public class Activity2 extends AppCompatActivity {
         setContentView(R.layout.activity_2);
         b1=findViewById(R.id.button);
         b2=findViewById(R.id.button2);
-
+        b3=findViewById(R.id.button3);
         myDB=new DatabaseHandler(this);
         final MediaPlayer mp= MediaPlayer.create(getApplicationContext(), R.raw.alarm);
 
@@ -68,6 +68,13 @@ public class Activity2 extends AppCompatActivity {
             }
         });
 
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), Activity3.class);
+                startActivity(i);
+            }
+        });
 
 
         b2.setOnLongClickListener(new View.OnLongClickListener() {
@@ -94,22 +101,24 @@ public class Activity2 extends AppCompatActivity {
                 thelist.add(data.getString(1));
                 number=number+data.getString(1)+(data.isLast()?"":";");
 
-                sendSms(number,msg,true);
-                call(number);
+                //sendSms(number,msg,true);
+                //call(number);
             }
 
-            sendSms(number,msg,true);
+            sendSms(number,msg);
 
         }
 
     }
 
-    private void sendSms(String number, String msg, boolean b) {
+    private void sendSms(String number, String msg) {
+//        msg="Help";
         Intent smsIntent=new Intent(Intent.ACTION_VIEW);
-        Uri.parse("smsto:"+number);
+        smsIntent.setData(Uri.parse("smsto:"));
         smsIntent.setType("vnd.android-dir/mms-sms");
-        smsIntent.putExtra("smsbody",msg);
-        startActivity(smsIntent);
+        smsIntent.putExtra("address",number);
+        smsIntent.putExtra("sms_body",msg);
+        //startActivity(smsIntent);
 
         try {
             startActivity(smsIntent);
@@ -160,7 +169,7 @@ public class Activity2 extends AppCompatActivity {
                 Manifest.permission.ACCESS_COARSE_LOCATION )!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
         }
-        else{
+//        else{
             Location locationGPS=locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if(locationGPS!=null)
             {
@@ -172,6 +181,6 @@ public class Activity2 extends AppCompatActivity {
             else{
                 Toast.makeText(this,"Unable to find location",Toast.LENGTH_SHORT).show();
             }
-        }
+//        }
     }
 }
